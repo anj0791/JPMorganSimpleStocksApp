@@ -19,7 +19,9 @@ b.	Calculate the GBCE All Share Index using the geometric mean of prices for all
 1.	Java version: 1.8.0_71
 2.	Apache Maven 3.3.9 
   Maven is preferred over Ant.  Maven is a software project management and comprehension tool. Based on the concept of a project    object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information. (https://maven.apache.org/).
-3.	slf4j-log4j12  ----- version 1.7.21
+4. Spring Framework 4.3.1
+    Spring framework is an open source lightweight Java platform that provides comprehensive infrastructure support for developing robust Java applications very easily and very rapidly. Its features include a. Inversion Of Control (IOC) and Dependency Injection - helps Loose Coupling b. Easy to test c. Lightweight d. Fast Development e. Powerful abstraction f. Declarative support
+3.	slf4j-log4j12  -- version 1.7.21
   The Simple Logging Facade for Java (SLF4J) serves as a simple facade or abstraction for various logging frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at deployment time. (http://www.slf4j.org/)
 4.	TestNG 6.8 --- for automated unit tests
   TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use. (http://testng.org/doc/index.html)
