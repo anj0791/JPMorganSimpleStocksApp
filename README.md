@@ -1,0 +1,2 @@
+# JPMorganSimpleStocksApp
+This is a console based interactive application. It continuously displays a Stocks Dashboard of stocks and their various values. It prompts the user to enter trade details, records the trade and recalculates stock prices, index, etc. The application has a fixed set of stocks which are maintained in an in memory database (a Map). The in memory database is updated when a stock is traded. The application ends when user chooses to do so.
