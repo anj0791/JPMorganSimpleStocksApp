@@ -1,0 +1,8 @@
+2016-11-01 12:34:57 INFO  SimpleStocksApp:28 - SimpleStocksApp started.
+2016-11-01 12:34:58 INFO  ClassPathXmlApplicationContext:581 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@64a294a6: startup date [Tue Nov 01 12:34:58 GMT 2016]; root of context hierarchy
+2016-11-01 12:34:58 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [SimpleStocksAppContext.xml]
+2016-11-01 12:35:01 INFO  SpringContextServiceImpl:27 - Spring Application Context loaded.
+2016-11-01 12:35:01 INFO  SimpleStocksUtil:41 - simpleStocksServiceImpl and the database are loaded.
+2016-11-01 12:35:46 INFO  SimpleStocksUtil:94 - Trade successfully recorded: [JOE, 50, 260.0, BUY ]
+2016-11-01 12:35:46 INFO  SimpleStocksUtil:111 - Stocks dashboard refreshed.
+2016-11-01 12:35:54 INFO  SimpleStocksApp:41 - SimpleStocksApp terminated

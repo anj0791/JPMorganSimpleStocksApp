@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Simple-Stocks,com.jpmorgan.simple.stocks.service.impl,SpringContextServiceImpl.SpringContextContainer,0,8,0,0,0,3,0,1,0,1
+Simple-Stocks,com.jpmorgan.simple.stocks.service.impl,SpringContextServiceImpl,0,24,0,0,0,8,0,3,0,3
+Simple-Stocks,com.jpmorgan.simple.stocks.service.impl,SimpleStocksServiceImpl,0,38,0,2,0,8,0,4,0,3
+Simple-Stocks,com.jpmorgan.simple.stocks.util,SimpleStocksUtil,351,27,14,0,79,10,16,2,9,2
+Simple-Stocks,com.jpmorgan.simple.stocks,SimpleStocksApp,85,0,12,0,18,0,9,0,3,0
+Simple-Stocks,com.jpmorgan.simple.stocks.model,Trade,29,24,0,0,13,9,8,3,8,3
+Simple-Stocks,com.jpmorgan.simple.stocks.model,Stock,12,161,2,14,4,39,6,13,4,7
+Simple-Stocks,com.jpmorgan.simple.stocks.model,StockType,9,29,0,0,0,2,2,2,2,2
+Simple-Stocks,com.jpmorgan.simple.stocks.model,TradeType,9,29,0,0,0,2,2,2,2,2
+Simple-Stocks,com.jpmorgan.simple.stocks.data.impl,SimpleStocksDataHandlerImpl,0,91,0,0,0,14,0,2,0,2
+Simple-Stocks,com.jpmorgan.simple.stocks.service,SpringContextService,0,3,0,0,0,1,0,1,0,1

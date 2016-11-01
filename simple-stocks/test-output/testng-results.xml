@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="250" started-at="2016-11-01T09:52:38Z" finished-at="2016-11-01T09:52:39Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="250" started-at="2016-11-01T09:52:38Z" finished-at="2016-11-01T09:52:39Z">
+      <class name="com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest@44046b0d]" name="setUp" is-config="true" duration-ms="58" started-at="2016-11-01T09:52:38Z" finished-at="2016-11-01T09:52:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="calculateGBCEAllShareIndex()[pri:0, instance:com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest@44046b0d]" name="calculateGBCEAllShareIndex" duration-ms="53" started-at="2016-11-01T09:52:39Z" finished-at="2016-11-01T09:52:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateGBCEAllShareIndex -->
+        <test-method status="PASS" signature="getStocksDataBase()[pri:0, instance:com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest@44046b0d]" name="getStocksDataBase" duration-ms="7" started-at="2016-11-01T09:52:39Z" finished-at="2016-11-01T09:52:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getStocksDataBase -->
+      </class> <!-- com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

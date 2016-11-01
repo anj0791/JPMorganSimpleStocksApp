@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SimpleStocksUtil.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Simple-Stocks</a> &gt; <a href="index.source.html" class="el_package">com.jpmorgan.simple.stocks.util</a> &gt; <span class="el_source">SimpleStocksUtil.java</span></div><h1>SimpleStocksUtil.java</h1><pre class="source lang-java linenums">/**
+ * 
+ */
+package com.jpmorgan.simple.stocks.util;
+
+import java.util.Date;
+import java.util.Map;
+import java.util.Scanner;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+
+import com.jpmorgan.simple.stocks.model.Stock;
+import com.jpmorgan.simple.stocks.model.Trade;
+import com.jpmorgan.simple.stocks.model.TradeType;
+import com.jpmorgan.simple.stocks.service.SimpleStocksService;
+import com.jpmorgan.simple.stocks.service.SpringContextService;
+
+/**
+ * This class provides static utility methods that help the application print
+ * Stocks Dashboard, read user inputs.
+ * 
+ * @author Veeranjaneyulu Sivaratri
+ *
+ */
+<span class="nc" id="L27">public class SimpleStocksUtil {</span>
+<span class="fc" id="L28">	private static final Logger logger = LoggerFactory.getLogger(SimpleStocksUtil.class);</span>
+
+<span class="fc" id="L30">	private static ApplicationContext context = SpringContextService.SPRING_CONTEXT;</span>
+<span class="fc" id="L31">	private static SimpleStocksService simpleStocksService = null;</span>
+<span class="fc" id="L32">	private static Map&lt;String, Stock&gt; allStocks = null;</span>
+
+	/**
+	 * This methods loads the simpleStocksServiceImpl and the stocks database.
+	 */
+	public static boolean loadServiceAndDatabase() {
+<span class="fc" id="L38">		boolean success = false;</span>
+<span class="fc" id="L39">		simpleStocksService = (SimpleStocksService) context.getBean(&quot;simpleStocksServiceImpl&quot;);</span>
+<span class="fc" id="L40">		allStocks = simpleStocksService.getStocksDataBase();</span>
+<span class="fc" id="L41">		logger.info(&quot;simpleStocksServiceImpl and the database are loaded.&quot;);</span>
+<span class="fc" id="L42">		success = true;</span>
+<span class="fc" id="L43">		return success;</span>
+	}
+
+	/**
+	 * This methods reads Trade details from the user and calls Stock's method
+	 * to record the trade.
+	 * 
+	 * @param scanner
+	 */
+	public static void readAndRecordTrade(Scanner scanner) {
+		try {
+<span class="nc" id="L54">			System.out.println(&quot;Please enter the stock you want to trade: &quot;);</span>
+<span class="nc" id="L55">			scanner.nextLine();</span>
+<span class="nc" id="L56">			String stockId = scanner.next();</span>
+<span class="nc" id="L57">			Stock stock = allStocks.get(stockId.toUpperCase());</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">			if (stock == null) {</span>
+<span class="nc" id="L59">				System.out.println(&quot;Stock doesn't exist. Returning to the Stocks Dashboard.&quot;);</span>
+<span class="nc" id="L60">				return;</span>
+			}
+<span class="nc" id="L62">			System.out.println(&quot;Please enter 1 to buy; 2 to sell: &quot;);</span>
+<span class="nc" id="L63">			scanner.nextLine();</span>
+<span class="nc" id="L64">			int buyOrSell = scanner.nextInt();</span>
+<span class="nc" id="L65">			TradeType tradeType = TradeType.BUY;</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">			if (buyOrSell == 2) {</span>
+<span class="nc" id="L67">				tradeType = TradeType.SELL;</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">			} else if (buyOrSell == 1) {</span>
+<span class="nc" id="L69">				tradeType = TradeType.BUY;</span>
+			} else {
+<span class="nc" id="L71">				System.out.println(&quot;Invalid input. Returning to the Stocks Dashboard.&quot;);</span>
+<span class="nc" id="L72">				return;</span>
+			}
+<span class="nc" id="L74">			System.out.println(&quot;Please enter quantity: &quot;);</span>
+<span class="nc" id="L75">			scanner.nextLine();</span>
+<span class="nc" id="L76">			int quantity = 0;</span>
+<span class="nc" id="L77">			quantity = scanner.nextInt();</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">			if (quantity &lt;= 0) {</span>
+<span class="nc" id="L79">				System.out.println(&quot;Invalid input. Returning to the Stocks Dashboard.&quot;);</span>
+<span class="nc" id="L80">				return;</span>
+			}
+
+<span class="nc" id="L83">			System.out.println(&quot;Please enter price: &quot;);</span>
+<span class="nc" id="L84">			scanner.nextLine();</span>
+<span class="nc" id="L85">			double price = 0.0;</span>
+<span class="nc" id="L86">			price = scanner.nextDouble();</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">			if (price &lt;= 0.0) {</span>
+<span class="nc" id="L88">				System.out.println(&quot;Invalid input. Returning to the Stocks Dashboard.&quot;);</span>
+<span class="nc" id="L89">				return;</span>
+			}
+
+<span class="nc" id="L92">			Trade trade = new Trade(new Date(), stock, quantity, price, tradeType);</span>
+<span class="nc" id="L93">			stock.recordTrade(trade);</span>
+<span class="nc" id="L94">			logger.info(&quot;Trade successfully recorded: [&quot; + stock.getStockId() + &quot;, &quot; + quantity + &quot;, &quot; + price + &quot;, &quot;</span>
+					+ tradeType + &quot; ]&quot;);
+
+<span class="nc" id="L97">		} catch (Exception ex) {</span>
+<span class="nc" id="L98">			System.out.println(&quot;Invalid input. Returning the Main Dash Board.&quot;);</span>
+<span class="nc" id="L99">			logger.error(&quot;Invalid input.&quot;, ex);</span>
+<span class="nc" id="L100">			return;</span>
+<span class="nc" id="L101">		}</span>
+
+<span class="nc" id="L103">		System.out.println(&quot;Trade successfully recorded.&quot;);</span>
+<span class="nc" id="L104">	}</span>
+
+	public static void refreshStocksValues() {
+<span class="nc" id="L107">		allStocks.values().forEach(stock -&gt; stock.calculateDividendYield());</span>
+<span class="nc" id="L108">		allStocks.values().forEach(stock -&gt; stock.calculatePERatio());</span>
+<span class="nc" id="L109">		allStocks.values().forEach(stock -&gt; stock.calculateStockTickerPrice());</span>
+<span class="nc" id="L110">		simpleStocksService.calculateGBCEAllShareIndex();</span>
+<span class="nc" id="L111">		logger.info(&quot;Stocks dashboard refreshed.&quot;);</span>
+<span class="nc" id="L112">	}</span>
+
+	public static void printStocksDashboard() {
+<span class="nc" id="L115">		System.out.println(</span>
+				&quot;----------------------------------------------------------------------------------------------------------------------------------------------&quot;);
+<span class="nc" id="L117">		System.out.println(</span>
+				&quot;                                                     Stocks Dashboard                                   &quot;);
+<span class="nc" id="L119">		String headingsPattern = &quot;%-15s%-15s%-15s%-25s%-10s%-20s%-15s%-15s%-15s&quot;;</span>
+<span class="nc" id="L120">		System.out.println(</span>
+				&quot;----------------------------------------------------------------------------------------------------------------------------------------------&quot;);
+<span class="nc" id="L122">		String heading = String.format(headingsPattern, &quot;StockName&quot;, &quot;StockType&quot;, &quot;LastDividend&quot;,</span>
+				&quot;FixedDividendPercent&quot;, &quot;ParValue&quot;, &quot;LastTradedPrice&quot;, &quot;DividendYield&quot;, &quot;P/E Ratio&quot;, &quot;TickerPrice&quot;);
+<span class="nc" id="L124">		System.out.println(heading);</span>
+<span class="nc" id="L125">		System.out.println(</span>
+				&quot;----------------------------------------------------------------------------------------------------------------------------------------------&quot;);
+<span class="nc" id="L127">		allStocks.forEach((k, v) -&gt; {</span>
+<span class="nc" id="L128">			String rowPattern = &quot;%-15s%-15s%12d%23.2f%10d%18.2f%16.2f%13.2f%16.2f&quot;;</span>
+<span class="nc" id="L129">			String row = String.format(rowPattern, v.getStockId(), v.getStockType(), v.getLastDividend(),</span>
+<span class="nc" id="L130">					v.getFixedDividendPercent(), v.getParValue(), v.lastTradedPrice(), v.calculateDividendYield(),</span>
+<span class="nc" id="L131">					v.calculatePERatio(), v.calculateStockTickerPrice());</span>
+<span class="nc" id="L132">			System.out.println(row);</span>
+<span class="nc" id="L133">		});</span>
+<span class="nc" id="L134">		System.out.println(</span>
+				&quot;----------------------------------------------------------------------------------------------------------------------------------------------&quot;);
+<span class="nc" id="L136">		System.out.println(&quot;All number values in pennies&quot;);</span>
+<span class="nc" id="L137">		System.out.println(&quot;GBCE All shares index: &quot; + simpleStocksService.calculateGBCEAllShareIndex());</span>
+<span class="nc" id="L138">		System.out.println(</span>
+				&quot;----------------------------------------------------------------------------------------------------------------------------------------------&quot;);
+<span class="nc" id="L140">	}</span>
+
+	public static int getWantToTrade(Scanner scanner) {
+<span class="nc" id="L143">		int userOption = 0;</span>
+		try {
+<span class="nc" id="L145">			userOption = scanner.nextInt();</span>
+<span class="nc bnc" id="L146" title="All 4 branches missed.">			while (userOption &lt; 1 || userOption &gt; 2) {</span>
+<span class="nc" id="L147">				System.out.println(&quot;Please enter a valid option: &quot;);</span>
+<span class="nc" id="L148">				userOption = scanner.nextInt();</span>
+			}
+<span class="nc" id="L150">		} catch (Exception ex) {</span>
+<span class="nc" id="L151">			logger.error(&quot;Invalid Input&quot;, ex);</span>
+<span class="nc" id="L152">			System.out.println(&quot;Please enter a number: &quot;);</span>
+<span class="nc" id="L153">			scanner.nextLine();</span>
+<span class="nc" id="L154">			userOption = getWantToTrade(scanner);</span>
+<span class="nc" id="L155">		}</span>
+<span class="nc" id="L156">		return userOption;</span>
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

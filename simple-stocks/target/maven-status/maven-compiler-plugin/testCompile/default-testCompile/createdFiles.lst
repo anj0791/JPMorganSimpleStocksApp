@@ -1,0 +1,3 @@
+com\jpmorgan\simple\stocks\model\StockTest.class
+com\jpmorgan\simple\stocks\service\impl\SimpleStocksServiceImplTest.class
+com\jpmorgan\simple\stocks\util\SimpleStocksUtilTest.class

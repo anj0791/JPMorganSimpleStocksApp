@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SpringContextServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Simple-Stocks</a> &gt; <a href="index.source.html" class="el_package">com.jpmorgan.simple.stocks.service.impl</a> &gt; <span class="el_source">SpringContextServiceImpl.java</span></div><h1>SpringContextServiceImpl.java</h1><pre class="source lang-java linenums">/**
+ * 
+ */
+package com.jpmorgan.simple.stocks.service.impl;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.jpmorgan.simple.stocks.service.SpringContextService;
+
+/**
+ * This singleton service implementation class loads the Spring Application
+ * Context.
+ * 
+ * @author Veeranjaneyulu Sivaratri
+ *
+ */
+
+public class SpringContextServiceImpl implements SpringContextService {
+<span class="fc" id="L22">	private static final Logger logger = LoggerFactory.getLogger(SpringContextServiceImpl.class);</span>
+<span class="fc" id="L23">	private static ApplicationContext springContext = null;</span>
+
+<span class="fc" id="L25">	private SpringContextServiceImpl() {</span>
+<span class="fc" id="L26">		SpringContextServiceImpl.springContext = new ClassPathXmlApplicationContext(&quot;SimpleStocksAppContext.xml&quot;);</span>
+<span class="fc" id="L27">		logger.info(&quot;Spring Application Context loaded.&quot;);</span>
+<span class="fc" id="L28">	}</span>
+
+<span class="fc" id="L30">	private static class SpringContextContainer {</span>
+		{
+<span class="fc" id="L32">			new SpringContextServiceImpl();</span>
+<span class="fc" id="L33">		}</span>
+	}
+
+	public static ApplicationContext getSpringContext() {
+<span class="fc" id="L37">		new SpringContextContainer();</span>
+<span class="fc" id="L38">		return SpringContextServiceImpl.springContext;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

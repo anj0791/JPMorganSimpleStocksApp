@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="11" passed="11">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="242" started-at="2016-11-01T10:38:18Z" finished-at="2016-11-01T10:38:19Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="242" started-at="2016-11-01T10:38:18Z" finished-at="2016-11-01T10:38:19Z">
+      <class name="com.jpmorgan.simple.stocks.model.StockTest">
+        <test-method status="PASS" signature="calculateDividendYieldAfterATrade()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="calculateDividendYieldAfterATrade" duration-ms="12" started-at="2016-11-01T10:38:19Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateDividendYieldAfterATrade -->
+        <test-method status="PASS" signature="calculateDividendYieldBeforeAnyTrade()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="calculateDividendYieldBeforeAnyTrade" duration-ms="1" started-at="2016-11-01T10:38:19Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateDividendYieldBeforeAnyTrade -->
+        <test-method status="PASS" signature="calculateDividendYieldPreferredStock()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="calculateDividendYieldPreferredStock" duration-ms="1" started-at="2016-11-01T10:38:19Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateDividendYieldPreferredStock -->
+        <test-method status="PASS" signature="calculatePERatioAfterATrade()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="calculatePERatioAfterATrade" duration-ms="1" started-at="2016-11-01T10:38:19Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculatePERatioAfterATrade -->
+        <test-method status="PASS" signature="calculatePERatioBeforeAnyTrade()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="calculatePERatioBeforeAnyTrade" duration-ms="3" started-at="2016-11-01T10:38:19Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculatePERatioBeforeAnyTrade -->
+        <test-method status="PASS" signature="getStockId()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="getStockId" duration-ms="3" started-at="2016-11-01T10:38:19Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getStockId -->
+        <test-method status="PASS" signature="lastTradedPriceAfterATrade()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="lastTradedPriceAfterATrade" duration-ms="3" started-at="2016-11-01T10:38:19Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lastTradedPriceAfterATrade -->
+        <test-method status="PASS" signature="lastTradedPriceBeforeAnyTrade()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="lastTradedPriceBeforeAnyTrade" duration-ms="1" started-at="2016-11-01T10:38:19Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lastTradedPriceBeforeAnyTrade -->
+      </class> <!-- com.jpmorgan.simple.stocks.model.StockTest -->
+      <class name="com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest@c3e5e3c]" name="setUp" is-config="true" duration-ms="46" started-at="2016-11-01T10:38:18Z" finished-at="2016-11-01T10:38:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jpmorgan.simple.stocks.model.StockTest@2d18d9ed]" name="setUp" is-config="true" duration-ms="0" started-at="2016-11-01T10:38:18Z" finished-at="2016-11-01T10:38:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="calculateGBCEAllShareIndex()[pri:0, instance:com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest@c3e5e3c]" name="calculateGBCEAllShareIndex" duration-ms="35" started-at="2016-11-01T10:38:18Z" finished-at="2016-11-01T10:38:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateGBCEAllShareIndex -->
+        <test-method status="PASS" signature="getStocksDataBase()[pri:0, instance:com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest@c3e5e3c]" name="getStocksDataBase" duration-ms="7" started-at="2016-11-01T10:38:18Z" finished-at="2016-11-01T10:38:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getStocksDataBase -->
+      </class> <!-- com.jpmorgan.simple.stocks.service.impl.SimpleStocksServiceImplTest -->
+      <class name="com.jpmorgan.simple.stocks.util.SimpleStocksUtilTest">
+        <test-method status="PASS" signature="loadServiceAndDatabase()[pri:0, instance:com.jpmorgan.simple.stocks.util.SimpleStocksUtilTest@2d6cbbdb]" name="loadServiceAndDatabase" duration-ms="39" started-at="2016-11-01T10:38:18Z" finished-at="2016-11-01T10:38:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadServiceAndDatabase -->
+      </class> <!-- com.jpmorgan.simple.stocks.util.SimpleStocksUtilTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
